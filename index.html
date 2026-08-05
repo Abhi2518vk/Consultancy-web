@@ -1,564 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Apex Consulting — Strategic advisory and transformation consulting for enterprises navigating complexity with confidence.">
-  <title>Apex Consulting — Strategy. Transformation. Impact.</title>
-
-  <!-- Preconnect Google Fonts -->
+  <meta name="description"
+    content="LA-FIN Management Transformations — Empowering businesses with structured financial execution across Kerala and beyond.">
+  <title>LA-FIN Management Transformations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23C8956C'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='60' font-weight='700' fill='%230B1120'>A</text></svg>">
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230B1F3A'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='28' font-weight='700' fill='%23C9A24D'%3ELM T%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-  <!-- ===================== PRELOADER ===================== -->
-  <div class="preloader" id="preloader">
-    <div class="preloader__content">
-      <div class="preloader__logo">Apex Consulting</div>
-      <div class="preloader__bar">
-        <div class="preloader__bar-fill"></div>
-      </div>
+  <!-- TOP MARQUEE -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span class="marquee-text">SERVICE COVERAGE: KOLLAM &nbsp;|&nbsp; ALAPPUZHA &nbsp;|&nbsp; THRISSUR &nbsp;|&nbsp;
+        MALAPPURAM &nbsp;|&nbsp; KOZHIKODE &nbsp;|&nbsp; BANGALORE &nbsp;|&nbsp; UAE
+        &nbsp;&nbsp;&nbsp;★&nbsp;&nbsp;&nbsp; SERVICE COVERAGE: KOLLAM &nbsp;|&nbsp; ALAPPUZHA &nbsp;|&nbsp; THRISSUR
+        &nbsp;|&nbsp; MALAPPURAM &nbsp;|&nbsp; KOZHIKODE &nbsp;|&nbsp; BANGALORE &nbsp;|&nbsp; UAE
+        &nbsp;&nbsp;&nbsp;★&nbsp;&nbsp;&nbsp; SERVICE COVERAGE: KOLLAM &nbsp;|&nbsp; ALAPPUZHA &nbsp;|&nbsp; THRISSUR
+        &nbsp;|&nbsp; MALAPPURAM &nbsp;|&nbsp; KOZHIKODE &nbsp;|&nbsp; BANGALORE &nbsp;|&nbsp; UAE
+        &nbsp;&nbsp;&nbsp;★&nbsp;&nbsp;&nbsp;</span>
+      <span class="marquee-text">SERVICE COVERAGE: KOLLAM &nbsp;|&nbsp; ALAPPUZHA &nbsp;|&nbsp; THRISSUR &nbsp;|&nbsp;
+        MALAPPURAM &nbsp;|&nbsp; KOZHIKODE &nbsp;|&nbsp; BANGALORE &nbsp;|&nbsp; UAE
+        &nbsp;&nbsp;&nbsp;★&nbsp;&nbsp;&nbsp; SERVICE COVERAGE: KOLLAM &nbsp;|&nbsp; ALAPPUZHA &nbsp;|&nbsp; THRISSUR
+        &nbsp;|&nbsp; MALAPPURAM &nbsp;|&nbsp; KOZHIKODE &nbsp;|&nbsp; BANGALORE &nbsp;|&nbsp; UAE
+        &nbsp;&nbsp;&nbsp;★&nbsp;&nbsp;&nbsp; SERVICE COVERAGE: KOLLAM &nbsp;|&nbsp; ALAPPUZHA &nbsp;|&nbsp; THRISSUR
+        &nbsp;|&nbsp; MALAPPURAM &nbsp;|&nbsp; KOZHIKODE &nbsp;|&nbsp; BANGALORE &nbsp;|&nbsp; UAE
+        &nbsp;&nbsp;&nbsp;★&nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
 
-
-  <!-- ===================== NAVIGATION ===================== -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo" id="nav-logo">
-        <span class="nav__logo-mark">A</span>
-        Apex
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <!-- Logo Image + Text Grouped Together on the Left -->
+      <a href="#" class="nav-brand">
+        <img src="assets/logo.png" alt="LA-FIN Logo" class="nav-brand-img">
+        <div class="nav-brand-text">
+          <span class="nav-logo-main">LA-FIN</span>
+          <span class="nav-logo-sub">MANAGEMENT TRANSFORMATIONS</span>
+        </div>
       </a>
 
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#philosophy" class="nav__link">About</a></li>
-        <li><a href="#services" class="nav__link">Services</a></li>
-        <li><a href="#cases" class="nav__link">Work</a></li>
-        <li><a href="#insights" class="nav__link">Insights</a></li>
-        <li><a href="#team" class="nav__link">Leadership</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <a href="#contact" class="btn btn--primary nav__cta" id="nav-cta">
-        Get in Touch
-        <span class="btn__arrow">→</span>
-      </a>
-
-      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
-
-    <!-- Mobile Menu -->
-    <div class="nav__mobile-menu" id="mobile-menu">
-      <a href="#philosophy" class="nav__link" data-mobile-link>About</a>
-      <a href="#services" class="nav__link" data-mobile-link>Services</a>
-      <a href="#cases" class="nav__link" data-mobile-link>Work</a>
-      <a href="#insights" class="nav__link" data-mobile-link>Insights</a>
-      <a href="#team" class="nav__link" data-mobile-link>Leadership</a>
-      <a href="#contact" class="btn btn--primary" data-mobile-link>Get in Touch</a>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#industries">Industries</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
-
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <div class="hero__bg">
-      <div class="hero__bg-image" id="hero-parallax" style="background-image: url('assets/hero-bg.jpg');"></div>
-      <div class="hero__bg-gradient"></div>
-    </div>
-
-    <div class="hero__geometric">
-      <div class="hero__geometric-line hero__geometric-line--v1"></div>
-      <div class="hero__geometric-line hero__geometric-line--v2"></div>
-      <div class="hero__geometric-line hero__geometric-line--h1"></div>
-    </div>
-
-    <div class="container hero__content">
-      <div class="hero__eyebrow">Strategic Advisory & Transformation</div>
-
-      <h1 class="hero__title" id="hero-title">
-        <span class="word"><span class="word-inner">Navigate</span></span>
-        <span class="word"><span class="word-inner">Complexity.</span></span><br>
-        <span class="word"><span class="word-inner">Unlock</span></span>
-        <span class="word"><span class="word-inner"><em>Potential.</em></span></span>
-      </h1>
-
-      <p class="hero__description" id="hero-description">
-        We partner with visionary leaders to architect bold strategies, accelerate transformation, and deliver lasting enterprise value across industries and geographies.
-      </p>
-
-      <div class="hero__actions" id="hero-actions">
-        <a href="#contact" class="btn btn--primary">
-          Start a Conversation
-          <span class="btn__arrow">→</span>
-        </a>
-        <a href="#cases" class="btn btn--ghost">
-          View Our Impact
-          <span class="btn__arrow">→</span>
-        </a>
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-glow hero-glow--1"></div>
+    <div class="hero-glow hero-glow--2"></div>
+    <div class="hero-particles" id="hero-particles"></div>
+    <div class="container hero-content">
+      <div class="hero-logo-block">
+        <!-- Big nav-logo.png perfectly centered -->
+        <img src="assets/nav-logo.png" alt="LA-FIN Management Transformations" class="hero-brand-img">
       </div>
+      <h2 class="hero-tagline">
+        <em>Compliance with Confidence.</em><br>
+        <em>Growth with Integrity.</em>
+      </h2>
+      <p class="hero-desc">Transforming Management. Transforming Futures.</p>
+      <a href="#services" class="btn btn-gold">Explore Services</a>
     </div>
+  </header>
 
-    <div class="hero__scroll" id="hero-scroll">
-      <div class="hero__scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
-
-
-  <!-- ===================== PHILOSOPHY / ABOUT ===================== -->
-  <section class="section philosophy" id="philosophy">
-    <!-- Values Marquee -->
-    <div class="philosophy__marquee">
-      <div class="philosophy__marquee-track">
-        <span class="philosophy__marquee-item">Integrity</span>
-        <span class="philosophy__marquee-item">Strategic Clarity</span>
-        <span class="philosophy__marquee-item">Innovation</span>
-        <span class="philosophy__marquee-item">Client Centricity</span>
-        <span class="philosophy__marquee-item">Excellence</span>
-        <span class="philosophy__marquee-item">Accountability</span>
-        <span class="philosophy__marquee-item">Resilience</span>
-        <span class="philosophy__marquee-item">Collaboration</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="philosophy__marquee-item">Integrity</span>
-        <span class="philosophy__marquee-item">Strategic Clarity</span>
-        <span class="philosophy__marquee-item">Innovation</span>
-        <span class="philosophy__marquee-item">Client Centricity</span>
-        <span class="philosophy__marquee-item">Excellence</span>
-        <span class="philosophy__marquee-item">Accountability</span>
-        <span class="philosophy__marquee-item">Resilience</span>
-        <span class="philosophy__marquee-item">Collaboration</span>
-      </div>
-    </div>
-
+  <!-- ABOUT US -->
+  <section id="about" class="about">
     <div class="container">
-      <div class="philosophy__content">
-        <div class="philosophy__text reveal-left">
-          <div class="section-label">Our Philosophy</div>
-          <blockquote class="philosophy__quote">
-            "Great strategy is not about predicting the future — it's about building the capacity to shape it."
-          </blockquote>
-          <p class="philosophy__body">
-            Founded on the conviction that enduring success comes from the intersection of rigorous analysis and bold imagination, Apex Consulting brings together world-class strategists, operators, and technologists to solve the most consequential challenges facing enterprises today.
-          </p>
-          <p class="philosophy__body">
-            We don't deliver reports. We deliver outcomes — measurable, sustainable, and transformative.
-          </p>
-          <a href="#services" class="btn btn--ghost">
-            Explore Our Approach
-            <span class="btn__arrow">→</span>
-          </a>
-        </div>
+      <h2 class="section-eyebrow">Who We Are</h2>
+      <h3 class="section-title">Brand Overview</h3>
+      <div class="about-intro">
+        <p>In today's competitive business environment, financial clarity is not just a requirement — it is a foundation
+          for growth. <strong>LA-FIN Management Transformations</strong> helps businesses manage their financial
+          responsibilities with accuracy, discipline, and confidence.</p>
+        <p>The brand bridges the gap between business ambition and financial execution by providing dependable financial
+          services that help companies stay compliant, organized, and growth-ready.</p>
+        <p>We are a team of professionals — <strong>CA, CMA, CS, ACCA, Advocates, Internal Auditors</strong> — built to
+          empower startups, SMEs, and corporate businesses with structured, reliable, and transparent financial
+          execution.</p>
+      </div>
 
-        <div class="philosophy__visual reveal-right">
-          <div class="philosophy__image">
-            <img src="assets/philosophy-1.jpg" alt="Strategic boardroom meeting" loading="lazy">
+      <div class="mv-grid">
+        <div class="mv-card">
+          <div class="mv-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
           </div>
-          <div class="philosophy__image">
-            <img src="assets/philosophy-2.jpg" alt="Data-driven insights" loading="lazy">
+          <h4 class="mv-title">Our Mission</h4>
+          <p>To empower startups, SMEs, and corporates with reliable financial management, accurate compliance support,
+            and structured reporting systems that help them grow with confidence, clarity, and integrity.</p>
+        </div>
+        <div class="mv-card">
+          <div class="mv-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
           </div>
-          <div class="philosophy__image">
-            <img src="assets/philosophy-3.jpg" alt="Collaborative workshop" loading="lazy">
-          </div>
-          <div class="philosophy__accent-box"></div>
+          <h4 class="mv-title">Our Vision</h4>
+          <p>To become a trusted financial transformation partner for businesses across Kerala and beyond, known for
+            simplifying finance, strengthening business systems, and enabling sustainable growth through ethical
+            financial practices.</p>
+        </div>
+      </div>
+
+      <h3 class="values-heading">Our Core Values</h3>
+      <div class="values-grid">
+        <div class="value-card">
+          <h4><em>Supportive</em></h4>
+          <p>Helping businesses feel guided, not confused.</p>
+        </div>
+        <div class="value-card">
+          <h4><em>Confident</em></h4>
+          <p>Strong, stable, and solution-oriented.</p>
+        </div>
+        <div class="value-card">
+          <h4><em>Ethical</em></h4>
+          <p>Rooted in compliance, transparency, and integrity.</p>
+        </div>
+        <div class="value-card">
+          <h4><em>Professional</em></h4>
+          <p>Clear, polished, and business-focused.</p>
+        </div>
+        <div class="value-card">
+          <h4><em>Trustworthy</em></h4>
+          <p>Honest, reliable, and confidence-building.</p>
+        </div>
+        <div class="value-card">
+          <h4><em>Clear</em></h4>
+          <p>No unnecessary financial complexity.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== SERVICES — BENTO GRID ===================== -->
-  <section class="section services" id="services">
+  <!-- SERVICES -->
+  <section id="services" class="services">
     <div class="container">
-      <div class="services__header reveal">
-        <div class="section-label">What We Do</div>
-        <h2 class="section-heading">Advisory Services Engineered for Enterprise Impact</h2>
-        <p class="section-subtext">From strategy to execution, we operate at the intersection of insight and action.</p>
+      <div class="services-header">
+        <div class="services-logo-sub">What We Offer</div>
       </div>
+      <h2 class="section-eyebrow section-eyebrow--light">Expertise & Execution</h2>
+      <h3 class="section-title section-title--light">Our Core Services</h3>
 
-      <div class="services__grid stagger">
-        <!-- Card 1 — Large -->
-        <div class="service-card reveal" style="--i: 0">
-          <span class="service-card__number">01</span>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M2 20h20M5 20V10l7-7 7 7v10M9 20v-5h6v5"/></svg>
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="svc-card" data-svc="0">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Accounting &amp; Bookkeeping</h4>
+            <p class="svc-tagline">Accurate books. Clear insights. Stronger decisions.</p>
+            <button class="svc-learn-btn" data-index="0">Learn More <span class="svc-plus">+</span></button>
           </div>
-          <h3 class="service-card__title">Corporate Strategy & Growth</h3>
-          <p class="service-card__text">Designing growth architectures that align market opportunity with organizational capability — from market entry to portfolio optimization.</p>
-          <span class="service-card__link">Learn More <span>→</span></span>
+          <div class="svc-card-details" data-details="0">
+            <p>We maintain daily bookkeeping and precise accounts so you can make data-driven business decisions with
+              absolute confidence.</p>
+            <ul class="svc-list">
+              <li>Daily Transaction Recording</li>
+              <li>Bank Reconciliation</li>
+              <li>Financial Statement Preparation</li>
+              <li>Accounts Payable & Receivable</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Accounting%20%26%20Bookkeeping"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="service-card reveal" style="--i: 1">
-          <span class="service-card__number">02</span>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <!-- Service 2 -->
+        <div class="svc-card" data-svc="1">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Tax Compliance &amp; Advisory</h4>
+            <p class="svc-tagline">Income Tax | GST | ITR Filing &amp; Tax Planning.</p>
+            <button class="svc-learn-btn" data-index="1">Learn More <span class="svc-plus">+</span></button>
           </div>
-          <h3 class="service-card__title">Digital Transformation</h3>
-          <p class="service-card__text">End-to-end digital reinvention — from operating model redesign to technology architecture and change management.</p>
-          <span class="service-card__link">Learn More <span>→</span></span>
+          <div class="svc-card-details" data-details="1">
+            <p>Complete support for your business and personal tax compliance needs — from ITR filing to GST advisory
+              and beyond.</p>
+            <ul class="svc-list">
+              <li>GST Registration & Monthly Filing</li>
+              <li>Income Tax Returns (ITR)</li>
+              <li>TDS Compliance &amp; Returns</li>
+              <li>Strategic Tax Planning</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Tax%20Compliance"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
         </div>
-
-        <!-- Card 3 -->
-        <div class="service-card reveal" style="--i: 2">
-          <span class="service-card__number">03</span>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <!-- Service 3 -->
+        <div class="svc-card" data-svc="2">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Fixed Asset Tagging &amp; Audit</h4>
+            <p class="svc-tagline">Specialized Physical Asset Verification.</p>
+            <button class="svc-learn-btn" data-index="2">Learn More <span class="svc-plus">+</span></button>
           </div>
-          <h3 class="service-card__title">Organizational Excellence</h3>
-          <p class="service-card__text">Building high-performance cultures, leadership capability, and operating models that sustain competitive advantage.</p>
-          <span class="service-card__link">Learn More <span>→</span></span>
+          <div class="svc-card-details" data-details="2">
+            <p>We verify and tag physical assets to maintain accurate fixed asset registers, ensuring full compliance
+              and transparency.</p>
+            <ul class="svc-list">
+              <li>Physical Asset Verification</li>
+              <li>Barcode / QR Code Tagging</li>
+              <li>Fixed Asset Register Maintenance</li>
+              <li>Reconciliation with Books</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Asset%20Tagging%20%26%20Audit"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
         </div>
-
-        <!-- Card 4 -->
-        <div class="service-card reveal" style="--i: 3">
-          <span class="service-card__number">04</span>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        <!-- Service 4 -->
+        <div class="svc-card" data-svc="3">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Legal &amp; Registration Services</h4>
+            <p class="svc-tagline">Registration, Documentation &amp; Compliance Support.</p>
+            <button class="svc-learn-btn" data-index="3">Learn More <span class="svc-plus">+</span></button>
           </div>
-          <h3 class="service-card__title">M&A Advisory & Integration</h3>
-          <p class="service-card__text">Strategic due diligence, deal structuring, and post-merger integration that maximizes value creation and minimizes disruption.</p>
-          <span class="service-card__link">Learn More <span>→</span></span>
+          <div class="svc-card-details" data-details="3">
+            <p>End-to-end assistance with legal registrations, documentation, and corporate compliance for businesses of
+              all sizes.</p>
+            <ul class="svc-list">
+              <li>Company &amp; LLP Registration</li>
+              <li>MSME / Udyam Registration</li>
+              <li>Drafting of Legal Agreements</li>
+              <li>Statutory Compliance Filings</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Legal%20Documentation"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
         </div>
-
-        <!-- Card 5 -->
-        <div class="service-card reveal" style="--i: 4">
-          <span class="service-card__number">05</span>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <!-- Service 5 -->
+        <div class="svc-card" data-svc="4">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Stock Audit &amp; Inventory</h4>
+            <p class="svc-tagline">Accurate stock. Better control. Reduced risk.</p>
+            <button class="svc-learn-btn" data-index="4">Learn More <span class="svc-plus">+</span></button>
           </div>
-          <h3 class="service-card__title">Sustainability & ESG</h3>
-          <p class="service-card__text">Embedding sustainability into strategy and operations — creating measurable environmental and social impact alongside financial returns.</p>
-          <span class="service-card__link">Learn More <span>→</span></span>
+          <div class="svc-card-details" data-details="4">
+            <p>Professional verification of your stock to ensure inventory integrity, minimize shrinkage, and maintain
+              accuracy.</p>
+            <ul class="svc-list">
+              <li>Physical Inventory Counting</li>
+              <li>Stock Valuation Verification</li>
+              <li>Dead/Slow-moving Stock ID</li>
+              <li>Variance Analysis &amp; Reporting</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Stock%20Audit"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
+        </div>
+        <!-- Service 6 -->
+        <div class="svc-card" data-svc="5">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Internal Control &amp; Process</h4>
+            <p class="svc-tagline">Stronger systems. Sustainable performance.</p>
+            <button class="svc-learn-btn" data-index="5">Learn More <span class="svc-plus">+</span></button>
+          </div>
+          <div class="svc-card-details" data-details="5">
+            <p>We analyze and optimize your internal processes to build stronger governance systems and sustainable
+              performance.</p>
+            <ul class="svc-list">
+              <li>Process Review &amp; Risk Assessment</li>
+              <li>SOP Development &amp; Implementation</li>
+              <li>Fraud Risk Mitigation</li>
+              <li>Operational Efficiency Audits</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Internal%20Control%20Review"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
+        </div>
+        <!-- Service 7 -->
+        <div class="svc-card" data-svc="6">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Outsourced Audit Services</h4>
+            <p class="svc-tagline">Reliable Audit Support Across Kerala.</p>
+            <button class="svc-learn-btn" data-index="6">Learn More <span class="svc-plus">+</span></button>
+          </div>
+          <div class="svc-card-details" data-details="6">
+            <p>Dependable audit support tailored to regional and local standards — available pan-Kerala for your
+              convenience.</p>
+            <ul class="svc-list">
+              <li>Statutory Audit Support</li>
+              <li>Tax Audit Execution</li>
+              <li>Concurrent &amp; Internal Audits</li>
+              <li>Management Audits</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Outsourced%20Audit"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
+        </div>
+        <!-- Service 8 -->
+        <div class="svc-card" data-svc="7">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Audit Subcontracting</h4>
+            <p class="svc-tagline">Reliable expertise. Seamless execution.</p>
+            <button class="svc-learn-btn" data-index="7">Learn More <span class="svc-plus">+</span></button>
+          </div>
+          <div class="svc-card-details" data-details="7">
+            <p>Subcontracting services designed for firms needing professional, timely, and seamless audit execution
+              across sectors.</p>
+            <ul class="svc-list">
+              <li>Manpower Support for CA Firms</li>
+              <li>End-to-End Audit Execution</li>
+              <li>Vouching &amp; Verification</li>
+              <li>Audit Report Drafting</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Audit%20Subcontracting"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
+        </div>
+        <!-- Service 9 -->
+        <div class="svc-card" data-svc="8">
+          <div class="svc-card-front">
+            <h4 class="svc-name">Business Consultancy</h4>
+            <p class="svc-tagline">Feasibility Studies, Market Analysis, Strategy.</p>
+            <button class="svc-learn-btn" data-index="8">Learn More <span class="svc-plus">+</span></button>
+          </div>
+          <div class="svc-card-details" data-details="8">
+            <p>Growth advisory, business feasibility studies, market analysis, and ongoing support to strategically
+              position your firm.</p>
+            <ul class="svc-list">
+              <li>Business Feasibility Studies</li>
+              <li>Market Entry Strategy</li>
+              <li>Financial Modeling &amp; Forecasting</li>
+              <li>Growth &amp; Scaling Advisory</li>
+            </ul>
+            <a href="https://wa.me/919778455859?text=Hi%2C%20I%20want%20to%20enquire%20about%20Business%20Consultancy"
+              class="btn btn-enquire" target="_blank" rel="noopener">Enquire Now</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== IMPACT / STATISTICS ===================== -->
-  <section class="impact" id="impact">
+  <!-- HOW WE WORK (PROCESS) -->
+  <section id="process" class="process-section">
     <div class="container">
-      <div class="impact__grid">
-        <div class="impact__stat reveal" style="--i: 0">
-          <div class="impact__number">
-            <span class="counter" data-target="240">0</span><span class="impact__number-suffix">+</span>
-          </div>
-          <div class="impact__label">Clients Served</div>
+      <h2 class="section-eyebrow">Our Methodology</h2>
+      <h3 class="section-title">How We Work</h3>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">01</div>
+          <h4>Consultation</h4>
+          <p>We begin by deeply understanding your business structure, financial goals, and current pain points to
+            tailor our approach.</p>
         </div>
-        <div class="impact__stat reveal" style="--i: 1">
-          <div class="impact__number">
-            <span class="counter" data-target="18">0</span>
-          </div>
-          <div class="impact__label">Countries</div>
+        <div class="process-step">
+          <div class="process-number">02</div>
+          <h4>Analysis</h4>
+          <p>Our team reviews your existing financial data, compliance status, and operational gaps to identify key
+            areas for improvement.</p>
         </div>
-        <div class="impact__stat reveal" style="--i: 2">
-          <div class="impact__number">
-            $<span class="counter" data-target="4.2" data-decimal="true">0</span><span class="impact__number-suffix">B</span>
-          </div>
-          <div class="impact__label">Value Created</div>
+        <div class="process-step">
+          <div class="process-number">03</div>
+          <h4>Execution</h4>
+          <p>We implement structured financial systems, execute bookkeeping, conduct audits, and ensure strict tax
+            compliance accurately.</p>
         </div>
-        <div class="impact__stat reveal" style="--i: 3">
-          <div class="impact__number">
-            <span class="counter" data-target="96">0</span><span class="impact__number-suffix">%</span>
-          </div>
-          <div class="impact__label">Client Retention</div>
+        <div class="process-step">
+          <div class="process-number">04</div>
+          <h4>Reporting &amp; Advisory</h4>
+          <p>You receive clear, actionable MIS reports and ongoing strategic advice to drive sustainable business
+            growth.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== CASE STUDIES ===================== -->
-  <section class="section" id="cases">
+  <!-- INDUSTRIES WE SERVE -->
+  <section id="industries" class="industries-section">
     <div class="container">
-      <div class="cases__header">
-        <div class="cases__header-text reveal">
-          <div class="section-label">Selected Work</div>
-          <h2 class="section-heading">Impact in Action</h2>
-          <p class="section-subtext">Transformative engagements that redefined industries and accelerated growth.</p>
-        </div>
-        <a href="#" class="btn btn--ghost reveal" style="--i: 1">
-          View All Case Studies
-          <span class="btn__arrow">→</span>
-        </a>
+      <h2 class="section-eyebrow">Our Expertise</h2>
+      <h3 class="section-title">Industries We Serve</h3>
+      <div class="industries-grid">
+        <div class="industry-card">Startups &amp; Tech</div>
+        <div class="industry-card">Retail &amp; Trading</div>
+        <div class="industry-card">Healthcare &amp; Clinics</div>
+        <div class="industry-card">Manufacturing</div>
+        <div class="industry-card">Real Estate &amp; Construction</div>
+        <div class="industry-card">Educational Institutions</div>
       </div>
+    </div>
+  </section>
 
-      <div class="cases__slider stagger">
-        <div class="case-card reveal" style="--i: 0">
-          <div class="case-card__image">
-            <img src="assets/case-1.jpg" alt="Global bank digital transformation" loading="lazy">
+  <!-- WHY CHOOSE US -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <h2 class="section-eyebrow">Our Promise</h2>
+      <h3 class="section-title">Why Choose LA-FIN?</h3>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"></path>
+              <path d="M10 22h4"></path>
+              <path
+                d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14">
+              </path>
+            </svg>
           </div>
-          <div class="case-card__info">
-            <div class="case-card__info-tag">Financial Services</div>
-            <h3 class="case-card__info-title">Reimagining Digital Banking for 12M+ Customers</h3>
-            <p class="case-card__info-text">Led a full-scale digital transformation for a top-20 global bank, resulting in 340% increase in digital adoption.</p>
-          </div>
+          <h4>Insight Driven</h4>
+          <p>Data-led insights for better decisions. We don't just file numbers — we interpret them.</p>
         </div>
-
-        <div class="case-card reveal" style="--i: 1">
-          <div class="case-card__image">
-            <img src="assets/case-2.jpg" alt="Healthcare system optimization" loading="lazy">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
+              <path
+                d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4">
+              </path>
+              <path d="m21 3 1 11h-2"></path>
+              <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path>
+              <path d="M3 4h8"></path>
+            </svg>
           </div>
-          <div class="case-card__info">
-            <div class="case-card__info-tag">Healthcare</div>
-            <h3 class="case-card__info-title">Operational Overhaul of a National Health Network</h3>
-            <p class="case-card__info-text">Redesigned care delivery and operational workflows across 140 facilities, reducing costs by $280M annually.</p>
-          </div>
+          <h4>Trusted Partnership</h4>
+          <p>Built on integrity, focused on your growth. We become an extension of your team.</p>
         </div>
-
-        <div class="case-card reveal" style="--i: 2">
-          <div class="case-card__image">
-            <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=800&q=80" alt="Energy sector M&A" loading="lazy">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
           </div>
-          <div class="case-card__info">
-            <div class="case-card__info-tag">Energy & Utilities</div>
-            <h3 class="case-card__info-title">Strategic Merger Creating a $9B Clean Energy Leader</h3>
-            <p class="case-card__info-text">Advised on a landmark cross-border merger that created one of the world's largest renewable energy platforms.</p>
+          <h4>Excellence</h4>
+          <p>Delivering quality with precision. Every engagement is handled with the highest standards.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
           </div>
+          <h4>Global Standards</h4>
+          <p>Deep Kerala roots with a global approach to financial management and compliance.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== INSIGHTS ===================== -->
-  <section class="section insights" id="insights">
-    <div class="container">
-      <div class="insights__header">
-        <div class="reveal">
-          <div class="section-label">Perspectives</div>
-          <h2 class="section-heading">Latest Insights</h2>
-        </div>
-        <a href="#" class="btn btn--ghost reveal" style="--i: 1">
-          View All Insights
-          <span class="btn__arrow">→</span>
-        </a>
+  <!-- STATS -->
+  <section class="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">+</span>
+        <p>Tax Filings Completed</p>
       </div>
-
-      <div class="insights__grid stagger">
-        <article class="insight-card reveal" style="--i: 0">
-          <div class="insight-card__image">
-            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="AI in enterprise strategy" loading="lazy">
-          </div>
-          <div class="insight-card__body">
-            <div class="insight-card__meta">
-              <span class="insight-card__category">Technology</span>
-              <span class="insight-card__date">Jun 2026</span>
-            </div>
-            <h3 class="insight-card__title">Beyond Automation: How AI is Reshaping Strategic Decision-Making</h3>
-            <p class="insight-card__excerpt">The next frontier of enterprise AI isn't about replacing decisions — it's about elevating the quality of strategic judgment at scale.</p>
-          </div>
-        </article>
-
-        <article class="insight-card reveal" style="--i: 1">
-          <div class="insight-card__image">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Supply chain resilience" loading="lazy">
-          </div>
-          <div class="insight-card__body">
-            <div class="insight-card__meta">
-              <span class="insight-card__category">Operations</span>
-              <span class="insight-card__date">May 2026</span>
-            </div>
-            <h3 class="insight-card__title">The Resilience Imperative: Building Antifragile Supply Chains</h3>
-            <p class="insight-card__excerpt">Why the most competitive organizations are designing supply networks that don't just survive disruption — they thrive on it.</p>
-          </div>
-        </article>
-
-        <article class="insight-card reveal" style="--i: 2">
-          <div class="insight-card__image">
-            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80" alt="ESG value creation" loading="lazy">
-          </div>
-          <div class="insight-card__body">
-            <div class="insight-card__meta">
-              <span class="insight-card__category">Sustainability</span>
-              <span class="insight-card__date">Apr 2026</span>
-            </div>
-            <h3 class="insight-card__title">From Compliance to Catalyst: ESG as a Value Creation Engine</h3>
-            <p class="insight-card__excerpt">Leading enterprises are proving that environmental and social responsibility isn't a cost center — it's the new competitive moat.</p>
-          </div>
-        </article>
+      <div class="stat-item">
+        <span class="stat-number" data-target="7">0</span><span class="stat-suffix"></span>
+        <p>Locations Across India &amp; UAE</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="9">0</span><span class="stat-suffix"></span>
+        <p>Core Services Offered</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+        <p>Trusted Clients</p>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== LEADERSHIP / TEAM ===================== -->
-  <section class="section" id="team">
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="footer">
     <div class="container">
-      <div class="team__header reveal">
-        <div class="section-label">Leadership</div>
-        <h2 class="section-heading">The Minds Behind the Mission</h2>
-        <p class="section-subtext" style="margin-inline: auto;">Decades of experience across industries, geographies, and the world's most complex challenges.</p>
-      </div>
+      <h2 class="section-eyebrow section-eyebrow--light">Reach Out</h2>
+      <h3 class="section-title section-title--light">Get In Touch</h3>
 
-      <div class="team__grid stagger">
-        <div class="team-member reveal" style="--i: 0">
-          <div class="team-member__portrait">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Managing Partner portrait" loading="lazy">
-          </div>
-          <h3 class="team-member__name">Alexandra Reid</h3>
-          <p class="team-member__role">Managing Partner</p>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo-block">LA-FIN</div>
+          <p class="footer-tagline">Your Trusted Tax Partner.<br>Accurate · Timely · Reliable</p>
         </div>
-
-        <div class="team-member reveal" style="--i: 1">
-          <div class="team-member__portrait">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Chief Strategy Officer portrait" loading="lazy">
-          </div>
-          <h3 class="team-member__name">Marcus Chen</h3>
-          <p class="team-member__role">Chief Strategy Officer</p>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📞 <a href="tel:+919778455859">+91 97784 55859</a></p>
+          <p>✉️ <a href="mailto:auditing@lafin.co.in">auditing@lafin.co.in</a></p>
         </div>
-
-        <div class="team-member reveal" style="--i: 2">
-          <div class="team-member__portrait">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Head of Digital portrait" loading="lazy">
-          </div>
-          <h3 class="team-member__name">Isabelle Moreau</h3>
-          <p class="team-member__role">Head of Digital</p>
+        <div class="footer-col">
+          <h4>Head Office</h4>
+          <p>U.S Binaya Tower, 1st Floor,<br>Kodur, Malappuram,<br>Kerala — 676504</p>
         </div>
-
-        <div class="team-member reveal" style="--i: 3">
-          <div class="team-member__portrait">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Director of Operations portrait" loading="lazy">
-          </div>
-          <h3 class="team-member__name">David Okafor</h3>
-          <p class="team-member__role">Director, Operations</p>
+        <div class="footer-col">
+          <h4>Partner Network</h4>
+          <p>Kozhikode · Thrissur · Ernakulam<br>Alappuzha · Kollam · Bangalore · UAE</p>
         </div>
       </div>
     </div>
-  </section>
-
-
-  <!-- ===================== TESTIMONIALS ===================== -->
-  <section class="section testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-label" style="justify-content: center;">
-        <span style="display:none;"></span>Client Voices
-      </div>
-
-      <div class="testimonials__inner">
-        <div class="testimonial active" data-testimonial="0">
-          <div class="testimonial__icon">"</div>
-          <p class="testimonial__quote">Apex didn't just give us a strategy — they gave us the conviction and the capability to execute it. The impact on our organization has been profound.</p>
-          <div class="testimonial__author">Sarah Lindhurst</div>
-          <div class="testimonial__company">CEO, Meridian Financial Group</div>
-        </div>
-
-        <div class="testimonial" data-testimonial="1">
-          <div class="testimonial__icon">"</div>
-          <p class="testimonial__quote">In 18 months, they helped us transform from a legacy operator into a digital-first enterprise. The rigor and partnership were unlike anything we'd experienced.</p>
-          <div class="testimonial__author">James Nakamura</div>
-          <div class="testimonial__company">COO, Pacific Health Systems</div>
-        </div>
-
-        <div class="testimonial" data-testimonial="2">
-          <div class="testimonial__icon">"</div>
-          <p class="testimonial__quote">Their ability to see around corners — to anticipate market shifts before they happen — has made them an indispensable extension of our leadership team.</p>
-          <div class="testimonial__author">Dr. Amira Haddad</div>
-          <div class="testimonial__company">Chairwoman, Orion Energy Partners</div>
-        </div>
-      </div>
-
-      <div class="testimonials__dots" id="testimonial-dots">
-        <button class="testimonials__dot active" data-dot="0" aria-label="Testimonial 1"></button>
-        <button class="testimonials__dot" data-dot="1" aria-label="Testimonial 2"></button>
-        <button class="testimonials__dot" data-dot="2" aria-label="Testimonial 3"></button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== CTA BAND ===================== -->
-  <section class="section cta-band" id="contact">
-    <div class="container">
-      <div class="cta-band__content reveal">
-        <h2 class="cta-band__title">Ready to Shape What's Next?</h2>
-        <p class="cta-band__text">Whether you're navigating a critical inflection point or planning your next phase of growth, we'd welcome the conversation.</p>
-        <div class="cta-band__actions">
-          <a href="#" class="btn btn--primary">
-            Schedule a Consultation
-            <span class="btn__arrow">→</span>
-          </a>
-          <a href="#" class="btn btn--outline">
-            Download Capabilities Deck
-            <span class="btn__arrow">↓</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer__main">
-        <div class="footer__brand">
-          <div class="footer__logo">
-            <span class="nav__logo-mark">A</span>
-            Apex Consulting
-          </div>
-          <p class="footer__tagline">Strategic advisory and transformation consulting for enterprises navigating complexity with confidence.</p>
-          <div class="footer__socials">
-            <a href="#" class="footer__social" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-            </a>
-            <a href="#" class="footer__social" aria-label="X (Twitter)">
-              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#" class="footer__social" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer__column-title">Services</h4>
-          <a href="#" class="footer__link">Corporate Strategy</a>
-          <a href="#" class="footer__link">Digital Transformation</a>
-          <a href="#" class="footer__link">M&A Advisory</a>
-          <a href="#" class="footer__link">Organizational Design</a>
-          <a href="#" class="footer__link">Sustainability & ESG</a>
-        </div>
-
-        <div>
-          <h4 class="footer__column-title">Company</h4>
-          <a href="#" class="footer__link">About Us</a>
-          <a href="#" class="footer__link">Leadership</a>
-          <a href="#" class="footer__link">Careers</a>
-          <a href="#" class="footer__link">Newsroom</a>
-          <a href="#" class="footer__link">Contact</a>
-        </div>
-
-        <div>
-          <h4 class="footer__column-title">Connect</h4>
-          <a href="#" class="footer__link">New York</a>
-          <a href="#" class="footer__link">London</a>
-          <a href="#" class="footer__link">Singapore</a>
-          <a href="#" class="footer__link">Dubai</a>
-          <a href="#" class="footer__link">São Paulo</a>
-        </div>
-      </div>
-
-      <div class="footer__bottom">
-        <span>© 2026 Apex Consulting. All rights reserved.</span>
-        <div class="footer__legal">
-          <a href="#" class="footer__link">Privacy Policy</a>
-          <a href="#" class="footer__link">Terms of Service</a>
-          <a href="#" class="footer__link">Accessibility</a>
-        </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>Let's Transform Today, For A Stronger Tomorrow.</p>
+        <p class="copyright">&copy; 2026 LA-FIN Management Transformations. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919778455859" class="whatsapp-float" target="_blank" rel="noopener"
+    aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.113 6.939 6.938 0 3.825-3.114 6.938-6.939 6.942z" />
+    </svg>
+  </a>
+
   <script src="script.js"></script>
 </body>
+
 </html>
