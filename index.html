@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="LA-FIN Management Transformations — Empowering businesses with structured financial execution across Kerala and beyond.">
-  <title>LA-FIN Management Transformations</title>
+  <title>LA-FIN Management Transformations | Financial Management & Compliance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230B1F3A'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='28' font-weight='700' fill='%23C9A24D'%3ELM T%3C/text%3E%3C/svg%3E">
@@ -42,7 +42,6 @@
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <div class="container nav-inner">
-      <!-- Logo Image + Text Grouped Together on the Left -->
       <a href="#" class="nav-brand">
         <img src="assets/logo.png" alt="LA-FIN Logo" class="nav-brand-img">
         <div class="nav-brand-text">
@@ -59,9 +58,12 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <a href="#contact" class="btn-nav-cta desktop-cta">Schedule Consultation</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
     <div class="mobile-menu" id="mobile-menu">
       <a href="#about">About</a>
@@ -69,27 +71,45 @@
       <a href="#process">Process</a>
       <a href="#industries">Industries</a>
       <a href="#contact">Contact</a>
+      <a href="#contact" class="btn-nav-cta mobile-cta">Schedule Consultation</a>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (Executive Layout) -->
   <header class="hero" id="hero">
     <div class="hero-bg-img"></div>
     <div class="hero-bg-overlay"></div>
-    <div class="hero-glow hero-glow--1"></div>
-    <div class="hero-glow hero-glow--2"></div>
-    <div class="hero-particles" id="hero-particles"></div>
+
     <div class="container hero-content">
-      <div class="hero-logo-block">
-        <!-- Big nav-logo.png perfectly centered -->
+      <!-- 1. Small Premium Logo -->
+      <div class="hero-logo-block animate-item">
         <img src="assets/nav-logo.png" alt="LA-FIN Management Transformations" class="hero-brand-img">
       </div>
-      <h2 class="hero-tagline">
-        <em>Compliance with Confidence.</em><br>
-        <em>Growth with Integrity.</em>
-      </h2>
-      <p class="hero-desc">Transforming Management. Transforming Futures.</p>
-      <a href="#services" class="btn btn-gold">Explore Services</a>
+
+      <!-- 2. Main Business Headline -->
+      <h1 class="hero-h1 animate-item">Financial Management &amp; Compliance Solutions for Growing Businesses</h1>
+
+      <!-- 3. Supporting Description -->
+      <p class="hero-desc animate-item">Helping startups, SMEs and enterprises simplify accounting, taxation, compliance
+        and strategic financial management with confidence and integrity.</p>
+
+      <!-- 4. Premium Line -->
+      <p class="hero-premium-line animate-item">Trusted partner for finance, compliance and business transformation.</p>
+
+      <!-- 5. CTA Buttons -->
+      <div class="hero-actions animate-item">
+        <a href="#contact" class="btn btn-gold">Schedule Consultation <span class="arrow">&rarr;</span></a>
+        <a href="#services" class="btn btn-outline-gold">Our Services</a>
+      </div>
+
+      <!-- 6. Trust Badges -->
+      <div class="hero-badges animate-item">
+        <div class="badge"><span class="check">&checkmark;</span> Accounting</div>
+        <div class="badge"><span class="check">&checkmark;</span> GST</div>
+        <div class="badge"><span class="check">&checkmark;</span> Audit</div>
+        <div class="badge"><span class="check">&checkmark;</span> Tax Advisory</div>
+        <div class="badge"><span class="check">&checkmark;</span> Company Registration</div>
+      </div>
     </div>
   </header>
 
