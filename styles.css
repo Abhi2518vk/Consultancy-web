@@ -278,7 +278,7 @@ p {
   font-weight: 500;
 }
 
-/* --- HERO --- */
+/* --- HERO (200vh for Pinned Hold) --- */
 .hero {
   position: relative;
   height: 200vh;
@@ -286,8 +286,7 @@ p {
 }
 
 .hero-sticky {
-  position: sticky;
-  top: 0;
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -321,35 +320,39 @@ p {
 }
 
 .hero-logo-img {
-  width: clamp(220px, 30vw, 420px);
+  width: clamp(180px, 30vw, 420px);
   height: auto;
   opacity: 0;
   filter: drop-shadow(0 0 30px rgba(201, 162, 77, 0));
 }
 
+/* --- SCROLL INDICATOR (Mouse Icon) --- */
 .scroll-indicator {
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  color: rgba(255, 255, 255, 0.7);
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
   font-family: var(--font-primary);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  z-index: 10;
+  z-index: 20;
+  /* Ensures it sits on top */
   opacity: 0;
+  /* GSAP handles the entrance */
 }
 
 .mouse {
-  width: 24px;
-  height: 38px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
+  width: 26px;
+  height: 42px;
+  border: 2px solid var(--gold);
+  /* Made it gold for high visibility */
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   padding-top: 6px;
@@ -360,7 +363,7 @@ p {
   height: 8px;
   background: var(--gold);
   border-radius: 2px;
-  animation: scrollWheel 1.8s ease infinite;
+  animation: scrollWheel 1.5s ease infinite;
 }
 
 @keyframes scrollWheel {
@@ -369,9 +372,14 @@ p {
     transform: translateY(0);
   }
 
+  50% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+
   100% {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(0);
   }
 }
 
@@ -389,6 +397,7 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  padding: 0 20px;
 }
 
 .hero-content>* {
@@ -421,14 +430,6 @@ p {
   max-width: 750px;
   font-weight: 400;
   font-style: italic;
-}
-
-.hero-premium-line {
-  font-family: var(--font-secondary);
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--gold);
-  font-weight: 900;
 }
 
 .hero-actions {
@@ -1010,7 +1011,6 @@ p {
   background: linear-gradient(45deg, rgba(201, 162, 77, 0.05) 0%, transparent 100%);
 }
 
-/* Updated to 3 columns */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1060,8 +1060,8 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
   padding-bottom: 60px;
 }
 
@@ -1187,9 +1187,9 @@ p {
     gap: 40px;
   }
 
-  /* Kept 3 columns for stats on tablet */
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
   }
 
   .process-step::before {
@@ -1243,7 +1243,6 @@ p {
   .mv-grid,
   .services-grid,
   .why-grid,
-  .footer-grid,
   .process-grid,
   .industries-grid {
     grid-template-columns: 1fr;
@@ -1258,5 +1257,10 @@ p {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }

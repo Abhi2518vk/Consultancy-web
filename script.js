@@ -138,51 +138,52 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "sine.inOut"
     });
 
-    // 2. Hero Scroll Transition Timeline (Refined Easing for Premium Clarity)
+    // 2. Hero Scroll Transition Timeline (Pinned, Snapped, and Slowed Down for Premium Float)
     const scrollTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1.5 // Slightly smoother scrub
+        scrub: 1.5,
+        pin: ".hero-sticky",
+        anticipatePin: 1,
+        snap: {
+          snapTo: [0, 0.5],
+          duration: { min: 0.5, max: 1.0 },
+          ease: "power2.inOut"
+        }
       }
     });
 
     scrollTl
-      // Fade in building background smoothly
-      .to('.hero-bg-img', { opacity: 1, duration: 0.3, ease: "none" }, 0)
-      // Move Logo Up & Fade Out smoothly
+      // Fade in building background smoothly (Slow Float)
+      .to('.hero-bg-img', { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 0)
+      // Move Logo Up & Fade Out smoothly (Slow Float)
       .to('.hero-logo-wrapper', {
-        y: "-15vh",
-        scale: 0.7,
+        y: "-20vh",
+        scale: 0.8,
         opacity: 0,
-        duration: 0.25,
-        ease: "power2.in"
+        duration: 0.5,
+        ease: "power2.inOut"
       }, 0)
-      // Fade out scroll indicator
-      .to('.scroll-indicator', { opacity: 0, duration: 0.1, ease: "none" }, 0)
+      // Fade out scroll indicator smoothly, ensuring it returns to 1 when scrolled back to top
+      .fromTo('.scroll-indicator',
+        { opacity: 1 },
+        { opacity: 0, duration: 0.2, ease: "none" },
+        0
+      )
 
-      // Fade in Landing Page Text
-      .to('.hero-content', { opacity: 1, duration: 0.15, ease: "none" }, 0.2)
+      // Fade in Landing Page Text smoothly
+      .to('.hero-content', { opacity: 1, duration: 0.2, ease: "none" }, 0.3)
       .to('.hero-content > *', {
         opacity: 1,
         y: 0,
-        stagger: 0.08,
-        duration: 0.25,
+        stagger: 0.05,
+        duration: 0.2,
         ease: "power2.out"
-      }, 0.2);
-
-    // Part 2: Hold the Landing Page (35% to 80% scroll)
-    // The timeline naturally holds its state while scrubbing between 0.35 and 0.8 
-
-    // Part 3: Transition Landing Page -> About Section (80% to 100% scroll)
-    scrollTl
-      .to('.hero-content', {
-        opacity: 0,
-        y: "-10vh",
-        duration: 0.15,
-        ease: "power2.in"
-      }, 0.85);
+      }, 0.3)
+      // Dummy tween to pad the timeline so it holds the landing page from 0.5 to 1.0
+      .to({}, { duration: 0.5 });
 
   } else {
     // Fallback if GSAP/Lenis fail to load
