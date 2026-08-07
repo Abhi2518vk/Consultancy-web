@@ -330,7 +330,7 @@ p {
   filter: drop-shadow(0 0 30px rgba(201, 162, 77, 0));
 }
 
-/* ★ NEW: Management Transformations tagline below logo */
+/* ★ Management Transformations tagline below logo — stretched to match logo width */
 .hero-logo-tagline-mask {
   overflow: hidden;
   display: inline-block;
@@ -340,9 +340,9 @@ p {
   font-family: var(--font-primary);
   font-size: clamp(0.65rem, 1.2vw, 0.9rem);
   font-weight: 500;
-  color: var(--gold);
+  color: var(--white);
   text-transform: uppercase;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
   opacity: 0;
   display: inline-block;
   transform: translateY(10px);

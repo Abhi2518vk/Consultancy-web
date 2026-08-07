@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Logo stays pinned in place — only shrinks slightly and fades as content appears
       .to('.hero-logo-wrapper', {
         scale: 0.9,
-        opacity: 0.15,
+        opacity: 0,
         duration: 0.5,
         ease: 'power2.inOut'
       }, 0)
