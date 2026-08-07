@@ -1218,6 +1218,18 @@ p {
 }
 
 @media (max-width: 768px) {
+  .hero-logo-tagline-mask {
+    max-width: 260px;
+  }
+
+  .hero-logo-tagline {
+    text-align: center;
+  }
+
+  .scroll-indicator {
+    bottom: 60px;
+  }
+
   .nav-links {
     display: none;
   }
