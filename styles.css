@@ -316,6 +316,10 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   will-change: transform, opacity;
 }
 
@@ -324,6 +328,25 @@ p {
   height: auto;
   opacity: 0;
   filter: drop-shadow(0 0 30px rgba(201, 162, 77, 0));
+}
+
+/* ★ NEW: Management Transformations tagline below logo */
+.hero-logo-tagline-mask {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.hero-logo-tagline {
+  font-family: var(--font-primary);
+  font-size: clamp(0.65rem, 1.2vw, 0.9rem);
+  font-weight: 500;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(10px);
+  will-change: transform, opacity;
 }
 
 /* --- SCROLL INDICATOR (Mouse Icon) --- */
@@ -342,16 +365,13 @@ p {
   text-transform: uppercase;
   letter-spacing: 2px;
   z-index: 20;
-  /* Ensures it sits on top */
   opacity: 0;
-  /* GSAP handles the entrance */
 }
 
 .mouse {
   width: 26px;
   height: 42px;
   border: 2px solid var(--gold);
-  /* Made it gold for high visibility */
   border-radius: 14px;
   display: flex;
   justify-content: center;
@@ -824,7 +844,7 @@ p {
 }
 
 .svc-list li::before {
-  content: '•';
+  content: '\2022';
   position: absolute;
   left: 0;
   color: var(--gold);
@@ -845,7 +865,7 @@ p {
   background: #d8b25e;
 }
 
-/* --- PROCESS / HOW WE WORK --- */
+/* --- PROCESS --- */
 .process-section {
   padding: 120px 0;
   background: var(--beige);
@@ -1120,7 +1140,7 @@ p {
   opacity: 0.4 !important;
 }
 
-/* --- FLOATING ACTIONS (WhatsApp & Call) --- */
+/* --- FLOATING ACTIONS --- */
 .floating-actions {
   position: fixed;
   bottom: 30px;

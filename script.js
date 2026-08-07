@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Force the page to always start at the top on load/refresh
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   // --- Mobile Menu Toggle ---
   const navHamburger = document.getElementById('nav-hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -41,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('active');
 
       const plusIcon = btn.querySelector('.svc-plus');
-      plusIcon.textContent = details.classList.contains('open') ? '×' : '+';
+      plusIcon.textContent = details.classList.contains('open') ? '\u00d7' : '+';
     });
   });
 
@@ -101,98 +107,137 @@ document.addEventListener('DOMContentLoaded', () => {
       smoothWheel: true
     });
 
+    // Sync Lenis's internal scroll state to 0 too — otherwise it can "remember" the old position
+    lenis.scrollTo(0, { immediate: true });
+
+    // Recalculate pin positions now that scroll is confirmed at 0
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
+
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
 
-    // 1. Hero Initial Load Timeline (Logo Animation & 0.5s Navbar Delay)
-    const introTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    // Initial clip state for the tagline's left-to-right reveal
+    gsap.set('.hero-logo-tagline-mask', { clipPath: 'inset(0% 100% 0% 0%)' });
+
+    const introTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
     introTl
+      // 1. Logo: clean fade only — no bounce, no scale/zoom
       .to('.hero-logo-img', {
         opacity: 1,
-        scale: 1,
-        duration: 1.5,
-        ease: "back.out(1.2)"
-      })
+        duration: 0.9,
+        ease: 'power2.out'
+      }, 0)
+      // 2. Tagline: wipes in left-to-right while fading up, starting ~400ms after the logo begins
+      .to('.hero-logo-tagline-mask', {
+        clipPath: 'inset(0% 0% 0% 0%)',
+        duration: 0.7,
+        ease: 'power2.out'
+      }, 0.4)
+      .to('.hero-logo-tagline', {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: 'power2.out'
+      }, 0.4)
       .to('.nav', {
         opacity: 1,
         y: 0,
-        visibility: "visible",
+        visibility: 'visible',
         duration: 0.8,
-        ease: "power2.out"
-      }, 0.5) // Navbar appears at 0.5 seconds
+        ease: 'power2.out'
+      }, 0.5)
+      // 3. Scroll cue only appears once the logo + tagline reveal has fully settled
       .to('.scroll-indicator', {
         opacity: 1,
-        duration: 0.5,
-        ease: "sine.out"
-      }, 1.2);
+        duration: 0.6,
+        ease: 'power1.out'
+      }, 1.3);
+
+    // Very soft ambient glow — just enough to lift the logo off the navy background, nothing flashy
+    gsap.to('.hero-logo-img', {
+      filter: 'drop-shadow(0 0 18px rgba(201, 162, 77, 0.15))',
+      duration: 2.2,
+      delay: 0.4,
+      ease: 'sine.inOut'
+    });
 
     // Separate glow animation for premium clarity
     gsap.to('.hero-logo-img', {
-      filter: "drop-shadow(0 0 30px rgba(201, 162, 77, 0.4))",
+      filter: 'drop-shadow(0 0 30px rgba(201, 162, 77, 0.4))',
       duration: 2,
       delay: 0.5,
-      ease: "sine.inOut"
+      ease: 'sine.inOut'
+    });
+
+    // ★ NEW: Subtle gold glow pulse on tagline
+    gsap.to('.hero-logo-tagline', {
+      textShadow: '0 0 20px rgba(201, 162, 77, 0.3)',
+      duration: 2,
+      delay: 1.2,
+      ease: 'sine.inOut'
     });
 
     // 2. Hero Scroll Transition Timeline (Pinned, Snapped, and Slowed Down for Premium Float)
     const scrollTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom bottom",
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom bottom',
         scrub: 1.5,
-        pin: ".hero-sticky",
+        pin: '.hero-sticky',
         anticipatePin: 1,
         snap: {
           snapTo: [0, 0.5],
           duration: { min: 0.5, max: 1.0 },
-          ease: "power2.inOut"
+          ease: 'power2.inOut'
         }
       }
     });
 
     scrollTl
       // Fade in building background smoothly (Slow Float)
-      .to('.hero-bg-img', { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 0)
-      // Move Logo Up & Fade Out smoothly (Slow Float)
+      .to('.hero-bg-img', { opacity: 1, duration: 0.5, ease: 'sine.inOut' }, 0)
+      // Logo stays pinned in place — only shrinks slightly and fades as content appears
       .to('.hero-logo-wrapper', {
-        y: "-20vh",
-        scale: 0.8,
-        opacity: 0,
+        scale: 0.9,
+        opacity: 0.15,
         duration: 0.5,
-        ease: "power2.inOut"
+        ease: 'power2.inOut'
       }, 0)
-      // Fade out scroll indicator smoothly, ensuring it returns to 1 when scrolled back to top
+      // Fade out scroll indicator smoothly
       .fromTo('.scroll-indicator',
         { opacity: 1 },
-        { opacity: 0, duration: 0.2, ease: "none" },
+        { opacity: 0, duration: 0.2, ease: 'none' },
         0
       )
-
       // Fade in Landing Page Text smoothly
-      .to('.hero-content', { opacity: 1, duration: 0.2, ease: "none" }, 0.3)
+      .to('.hero-content', { opacity: 1, duration: 0.2, ease: 'none' }, 0.3)
       .to('.hero-content > *', {
         opacity: 1,
         y: 0,
         stagger: 0.05,
         duration: 0.2,
-        ease: "power2.out"
+        ease: 'power2.out'
       }, 0.3)
-      // Dummy tween to pad the timeline so it holds the landing page from 0.5 to 1.0
+      // Dummy tween to pad the timeline
       .to({}, { duration: 0.5 });
 
   } else {
     // Fallback if GSAP/Lenis fail to load
     const heroLogo = document.querySelector('.hero-logo-img');
+    const heroTagline = document.querySelector('.hero-logo-tagline');
     const nav = document.querySelector('.nav');
     const scrollInd = document.querySelector('.scroll-indicator');
     const heroContent = document.querySelector('.hero-content');
 
     if (heroLogo) heroLogo.style.opacity = '1';
+    if (heroTagline) { heroTagline.style.opacity = '1'; heroTagline.style.transform = 'translateY(0)'; }
     if (nav) { nav.style.opacity = '1'; nav.style.transform = 'translateY(0)'; nav.style.visibility = 'visible'; }
     if (scrollInd) scrollInd.style.opacity = '1';
     if (heroContent) {
