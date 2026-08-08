@@ -123,21 +123,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     gsap.ticker.lagSmoothing(0);
 
-    // --- Auto-scroll to the "landing" reveal after 3s, unless the user has already scrolled ---
-    let userScrolled = false;
-    const markUserScrolled = () => { userScrolled = true; };
-    window.addEventListener('wheel', markUserScrolled, { once: true, passive: true });
-    window.addEventListener('touchstart', markUserScrolled, { once: true, passive: true });
-    window.addEventListener('keydown', markUserScrolled, { once: true });
+    // --- Auto-scroll to the "landing" reveal after 3s of settling at the top ---
+    // FIX (Issue 2, v2): driven off the NATIVE `scroll` event instead of wheel/touch/
+    // keydown + lenis-only scroll. Native `scroll` fires for every possible way scrollY
+    // can change — scrollbar drag, momentum/inertia after lifting a finger, keyboard
+    // Home/End, programmatic scroll, Lenis-driven scroll, etc. Using it as the single
+    // source of truth means arriving at (or leaving) the top is never missed.
+    let hasTriggeredAtTop = false;
+    let settleTimer = null;
+    const TOP_THRESHOLD = 20;
+    const SETTLE_DELAY = 3000;
 
-    setTimeout(() => {
-      if (!userScrolled && window.scrollY < 20) {
-        lenis.scrollTo(window.innerHeight * 0.5, {
-          duration: 2.5,
-          easing: (t) => 1 - Math.pow(1 - t, 3)
-        });
+    function fireAutoScroll() {
+      hasTriggeredAtTop = true;
+      lenis.scrollTo(window.innerHeight * 0.5, {
+        duration: 2.5,
+        easing: (t) => 1 - Math.pow(1 - t, 3)
+      });
+    }
+
+    function handleScrollForAutoTrigger() {
+      if (window.scrollY >= TOP_THRESHOLD) {
+        // Left the top — re-arm so it can fire again next time we're back at top.
+        hasTriggeredAtTop = false;
+        clearTimeout(settleTimer);
+        return;
       }
-    }, 3000);
+      if (hasTriggeredAtTop) return; // already fired for this "visit" to the top
+
+      // At/near the top: (re)start the 3s settle countdown. Any further scroll event
+      // while still near the top resets this, so it only truly fires 3s after the
+      // scrolling has actually stopped.
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(() => {
+        if (!hasTriggeredAtTop && window.scrollY < TOP_THRESHOLD) {
+          fireAutoScroll();
+        }
+      }, SETTLE_DELAY);
+    }
+
+    window.addEventListener('scroll', handleScrollForAutoTrigger, { passive: true });
+    lenis.on('scroll', handleScrollForAutoTrigger); // belt-and-suspenders for Lenis-virtualized scroll
+
+    // Run once immediately to start the initial 3s countdown on page load (scrollY is 0 here)
+    handleScrollForAutoTrigger();
 
     // Initial clip state for the tagline's left-to-right reveal
     gsap.set('.hero-logo-tagline-mask', { clipPath: 'inset(0% 100% 0% 0%)' });
@@ -199,7 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: '.hero',
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 2.2,
+        // FIX (Issue 1): lowered from 2.2 -> 0.6. This is what caused the buttons/badges to
+        // keep "catching up" for ~2s after Lenis physically finished scrolling. 0.6 keeps
+        // some smoothing so it doesn't feel snappy/instant, but the lag is no longer noticeable.
+        scrub: 0.6,
         pin: '.hero-sticky',
         anticipatePin: 1,
         snap: {
