@@ -102,9 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true
+      smoothWheel: true,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 1.2
     });
 
     // Sync Lenis's internal scroll state to 0 too — otherwise it can "remember" the old position
@@ -197,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: '.hero',
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 1.5,
+        scrub: 2.2,
         pin: '.hero-sticky',
         anticipatePin: 1,
         snap: {
