@@ -121,6 +121,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     gsap.ticker.lagSmoothing(0);
 
+    // --- Auto-scroll to the "landing" reveal after 3s, unless the user has already scrolled ---
+    let userScrolled = false;
+    const markUserScrolled = () => { userScrolled = true; };
+    window.addEventListener('wheel', markUserScrolled, { once: true, passive: true });
+    window.addEventListener('touchstart', markUserScrolled, { once: true, passive: true });
+    window.addEventListener('keydown', markUserScrolled, { once: true });
+
+    setTimeout(() => {
+      if (!userScrolled && window.scrollY < 20) {
+        lenis.scrollTo(window.innerHeight * 0.5, {
+          duration: 2.5,
+          easing: (t) => 1 - Math.pow(1 - t, 3)
+        });
+      }
+    }, 3000);
+
     // Initial clip state for the tagline's left-to-right reveal
     gsap.set('.hero-logo-tagline-mask', { clipPath: 'inset(0% 100% 0% 0%)' });
 
@@ -167,19 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: 'sine.inOut'
     });
 
-    // Separate glow animation for premium clarity
+    // Separate glow animation for premium clarity — kept on the logo mark only
     gsap.to('.hero-logo-img', {
       filter: 'drop-shadow(0 0 30px rgba(201, 162, 77, 0.4))',
       duration: 2,
       delay: 0.5,
-      ease: 'sine.inOut'
-    });
-
-    // ★ NEW: Subtle gold glow pulse on tagline
-    gsap.to('.hero-logo-tagline', {
-      textShadow: '0 0 20px rgba(201, 162, 77, 0.3)',
-      duration: 2,
-      delay: 1.2,
       ease: 'sine.inOut'
     });
 
@@ -205,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
       .to('.hero-bg-img', { opacity: 1, duration: 0.5, ease: 'sine.inOut' }, 0)
       // Logo stays pinned in place — only shrinks slightly and fades as content appears
       .to('.hero-logo-wrapper', {
-        scale: 0.9,
+        scale: 0.85,
         opacity: 0,
-        duration: 0.5,
+        duration: 0.35,
         ease: 'power2.inOut'
       }, 0)
       // Fade out scroll indicator smoothly
@@ -217,14 +225,14 @@ document.addEventListener('DOMContentLoaded', () => {
         0
       )
       // Fade in Landing Page Text smoothly
-      .to('.hero-content', { opacity: 1, duration: 0.2, ease: 'none' }, 0.3)
+      .to('.hero-content', { opacity: 1, duration: 0.2, ease: 'none' }, 0.4)
       .to('.hero-content > *', {
         opacity: 1,
         y: 0,
         stagger: 0.05,
         duration: 0.2,
         ease: 'power2.out'
-      }, 0.3)
+      }, 0.4)
       // Dummy tween to pad the timeline
       .to({}, { duration: 0.5 });
 

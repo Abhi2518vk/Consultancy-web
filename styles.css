@@ -310,6 +310,32 @@ p {
   z-index: 1;
 }
 
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-glow--1 {
+  width: 600px;
+  height: 600px;
+  background: var(--blue-mid);
+  top: -200px;
+  left: -100px;
+  opacity: 0.3;
+}
+
+.hero-glow--2 {
+  width: 400px;
+  height: 400px;
+  background: var(--gold);
+  bottom: -100px;
+  right: -50px;
+  opacity: 0.1;
+}
+
 .hero-logo-wrapper {
   position: absolute;
   top: 50%;
@@ -320,31 +346,35 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  width: clamp(180px, 30vw, 420px);
   will-change: transform, opacity;
 }
 
 .hero-logo-img {
-  width: clamp(180px, 30vw, 420px);
+  width: 100%;
   height: auto;
   opacity: 0;
   filter: drop-shadow(0 0 30px rgba(201, 162, 77, 0));
 }
 
-/* ★ Management Transformations tagline below logo — stretched to match logo width */
+/* Management Transformations tagline below logo — strictly matches logo's start/end width */
 .hero-logo-tagline-mask {
   overflow: hidden;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 
 .hero-logo-tagline {
   font-family: var(--font-primary);
   font-size: clamp(0.65rem, 1.2vw, 0.9rem);
   font-weight: 500;
-  color: var(--white);
+  color: var(--beige);
   text-transform: uppercase;
   letter-spacing: 3px;
   opacity: 0;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  text-align: center;
   transform: translateY(10px);
   will-change: transform, opacity;
 }
@@ -1113,6 +1143,17 @@ p {
   opacity: 0.8;
   margin-bottom: 10px;
   line-height: 1.7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
 }
 
 .footer-col a {
@@ -1163,12 +1204,12 @@ p {
 }
 
 .whatsapp-float {
-  background: #25D366;
+  background: var(--gold);
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 8px 25px rgba(201, 162, 77, 0.6);
 }
 
 .call-float {
@@ -1218,18 +1259,6 @@ p {
 }
 
 @media (max-width: 768px) {
-  .hero-logo-tagline-mask {
-    max-width: 260px;
-  }
-
-  .hero-logo-tagline {
-    text-align: center;
-  }
-
-  .scroll-indicator {
-    bottom: 60px;
-  }
-
   .nav-links {
     display: none;
   }
